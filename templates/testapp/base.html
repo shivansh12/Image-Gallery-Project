@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/img.css' %}">
+    <title>{% block title_block%}{% endblock%}</title>
+  </head>
+  <body>
+    <div class="conatiner-fluid">
+
+    <div class="container">
+     <div class="row">
+     <div class="col-md-4">
+       <a href="/"><h1 style="font-family: monospace;
+         font-weight: bold;">Image-Gallery</h1></a>
+       </div>
+       <div class="col-md-8" style="    margin-top: 26px;">
+         <div class="col-md-4">
+
+         </div>
+         <div class="col-md-4" style="display:flex;">
+
+            <div class="">
+            <a href="{% url 'add_view' %}" style="margin-left:15px;"class="btn btn-primary">Add Post</a>
+            </div>
+
+         </div>
+       </div>
+     </div>
+
+    </div>
+    </div>
+    <hr style="background-color: #9E9E9E;height: 2px;">
+{% block body_block %}
+{% endblock %}
+<hr style="background-color: #9E9E9E;height: 2px;margin-top:40px;">
+<div class="container-fluid">
+  <div class="container">
+    <h1 style="font-family: monospace;
+      font-weight:bold;text-align:center;">Image-Gallery-Footer</h1>
+
+  </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js">
+
+</script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

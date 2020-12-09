@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html'%}
+{% block title_block%}Image-Gallery Details{% endblock%}
+{% block body_block %}
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+    <img src="{{image.image.url}}" style="width: 350px;height: 400px;" class="img-responsive" >
+    </div>
+
+    <div class="col-md-6">
+      <div class="image-title" style="font-size: 50px;
+    font-family: monospace;    color: chocolate;">
+       {{image.img_title}}
+        </div>
+        <div class="imgage-discription" style="font-size: 20px;
+    margin-top: 25px;
+    font-family: monospace;">
+          {{image.img_des}}
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+{% endblock %}

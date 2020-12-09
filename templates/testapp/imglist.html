@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html'%}
+{% block title_block%}Image-Gallery Home{% endblock%}
+
+
+{% block body_block %}
+
+
+
+<div class="container-fluid mt-3">
+<div class="row" style="margin-top:50px;">
+  <!--- filter     ---->
+  <div class="col-md-3">
+<div class="list-group">
+  <a href="/" class="list-group-item">All-Images</a>
+{% for category in categories %}
+<a href="/?category={{category.id}}" class="list-group-item">{{category.name}}</a>
+{% endfor %}
+</div>
+  </div>
+
+    <div class="col-md-9">
+
+      {% for image in result %}
+      {% load static %}
+      <div class="col-md-4 item" >
+        <div class="card item-card card-block" style="border: 2px solid grey;text-align:center;">
+        <h4 class="card-title text-right"><i class="material-icons">settings</i></h4>
+    <a href="{{image.get_absolute_url}}"><img src="{{image.image.url}}" alt="Photo of sunset" height="200" width="250" ></a>
+          <a href="{{image.get_absolute_url}}"><h5 class="item-card-title mt-3 mb-3">{{image.img_title}}</h5></a>
+
+    </div>
+      </div>
+      {% endfor %}
+
+
+  </div>
+
+
+</div>
+<div class="container">
+  <div class="row" style="text-align:center;margin-top:50px;">
+{% include 'testapp/pagination.html' with page=result %}
+  </div>
+
+</div>
+
+{% endblock %}
